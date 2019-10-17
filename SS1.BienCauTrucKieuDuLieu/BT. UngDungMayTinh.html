@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<form>
+    <input id="sothu1" type="number">
+    <input id="sothu2" type="number">
+    <input id="cong" type="button" onclick="Cong()" value="+">
+    <input id="tru" type="button" onclick="Tru()" value="-">
+    <input id="nhan" type="button" onclick="Nhan()" value="*">
+    <input id="chia" type="button" onclick="Chia()" value="/">
+    <p id="result"></p>
+</form>
+<script>
+
+
+
+    function Cong() {
+        let sothu1 = parseFloat(document.getElementById("sothu1").value);
+        console.log(sothu1);
+        let sothu2 = parseFloat(document.getElementById("sothu2").value);
+        console.log(sothu2);
+        let result = 0;
+        result = sothu1 + sothu2;
+        document.getElementById("result").innerText = result;
+    }
+
+    function Tru() {
+        let sothu1 = parseFloat(document.getElementById("sothu1").value);
+        console.log(sothu1);
+        let sothu2 = parseFloat(document.getElementById("sothu2").value);
+        console.log(sothu2);
+        let result = 0;
+        result = sothu1 - sothu2;
+        document.getElementById("result").innerText = result;
+
+    }
+
+    function Nhan() {
+        let sothu1 = parseFloat(document.getElementById("sothu1").value);
+        console.log(sothu1);
+        let sothu2 = parseFloat(document.getElementById("sothu2").value);
+        console.log(sothu2);
+        let result = 0;
+        result = sothu1 * sothu2;
+        document.getElementById("result").innerText = result;
+
+    }
+
+    function Chia() {
+        let sothu1 = parseFloat(document.getElementById("sothu1").value);
+        console.log(sothu1);
+        let sothu2 = parseFloat(document.getElementById("sothu2").value);
+        console.log(sothu2);
+        let result = 0;
+        result = sothu1 / sothu2;
+        document.getElementById("result").innerText = result;
+
+    }
+
+
+</script>
+</body>
+</html>

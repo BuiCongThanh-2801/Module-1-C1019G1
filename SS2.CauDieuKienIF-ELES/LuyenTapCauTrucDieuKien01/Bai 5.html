@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let diemktra=parseInt(prompt("Nhập điểm"));
+    let diemgiuaky=parseInt(prompt("Nhập điểm"));
+    let diemcuoiky=parseInt(prompt("Nhập điểm"));
+    let diemtrungbinh=(diemktra+(diemgiuaky*2)+(diemcuoiky*3))/6
+    if (diemtrungbinh>6.5 && diemtrungbinh <8.0){
+        alert("học lực khá")
+    }
+    else if (diemtrungbinh>8.0 && diemtrungbinh<9.0){
+        alert("học lực giỏi")
+    }
+    else if (diemtrungbinh<6.5 && diemtrungbinh>5.0){
+        alert("học lực trung bình")
+    }
+    else if (diemtrungbinh>9.0){
+        alert("Học lực xuất sắc");
+    }
+    else {
+        alert("học lực yếu hoặc kém");
+    }
+</script>
+
+</body>
+</html>

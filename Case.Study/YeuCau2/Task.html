@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let name = prompt("Nhập tên :");
+    let IdCard= parseInt(prompt(" Nhập số chưng minh nhân dân: "));
+    let birthday= prompt(" Nhập Tháng trước Ngày sau: ");
+    let email= prompt(" Nhập Email: ");
+    let address = prompt(" Nhập địa chỉ: ");
+    let typeCustomers= prompt(" Nhập kiểu khách hàng: ");
+    let disCount= parseInt(prompt(" Nhập giảm giá :"));
+    let rentDay= parseInt(prompt(" Nhập số ngày thuê: "));
+    let typeRoom= prompt(" Nhập kiểu phòng");
+    let typeService = prompt(" Kiểu dịch vụ");
+    let numberOfAccompanying = parseInt(prompt(" Nhập số lượng đi kèm"));
+    let totalpay=0;
+    if (typeService==="Villa"){
+        totalpay= 500*rentDay*(1-disCount/100);
+    }
+    else if (typeService==="House"){
+        totalpay= 300*rentDay*(1-disCount/100);
+    }
+    else {
+        totalpay= 100*rentDay*(1-disCount/100);
+    }
+    let currenYear= new Date().getFullYear();
+    let birthdayCustomer=new Date(birthday).getFullYear();
+    let age=currenYear-birthdayCustomer;
+    let Menu= prompt("Lựa chọn"+
+        "\n1. Hiển thị thông tin Khách Hàng" +
+        "\n2. Chỉnh sửa thông tin khách hàng"+
+        "\n3. Số tiền phải trả");
+    switch (Menu) {
+        case "1":
+        alert("Thông tin khách hàng " +
+            "\n1. Tên khách hàng:" + name+
+            "\n2. Ngày sinh:" + birthday+
+            "\n3. Số CMND:" +IdCard +
+            "\n4. Email :" + email+
+            "\n5. Địa Chỉ" + address+
+            "\n6. Kiểu khách hàng:" + typeCustomers+
+            "\n7. Giảm giá:" + disCount+
+            "\n8. Số ngày thuê:" + rentDay+
+            "\n9. Kiểu phòng" + typeRoom +
+            "\n10 . Kiểu dịch vụ" + typeService+
+            "\11. Số lượng đi kèm" + numberOfAccompanying );
+            break;
+        case "2":
+            name=prompt("Nhập lại tên khách hàng:");
+            email=prompt("Nhập lại email khách hàng:");
+            IdCard=prompt("Nhập lại số CMND của khách hàng:");
+            address=prompt("Nhập lại địa chỉ khách hàng:");
+            typeCustomers=prompt("Nhập lại kiểu khách hàng");
+            disCount=prompt("Nhập lại giảm giá:");
+            rentDay=prompt("Nhập lại số ngày thuê:");
+            typeService=prompt("Nhập lại kiểu dịch vụ:");
+            numberOfAccompanying=prompt("Nhập số lượng đi kèm");
+            birthday=prompt("Nhập ngày sinh:");
+            break;
+        case "3":
+            if (address==="Đà Nẵng"){
+                totalpay=totalpay-20;
+                if (age>=30){
+                    totalpay=totalpay-2;
+                }
+                else if (age>=20 && age<30){
+                    totalpay=totalpay-1;
+                }
+            }
+            if (address==="Huế"){
+                totalpay=totalpay-10;
+            }
+            else if (address==="Quảng Nam"){
+                totalpay=totalpay-5;
+            }
+            else{
+            }
+            if (rentDay>=7){
+             totalpay=totalpay-30;
+            }
+            if(rentDay>=5 && rentDay <7){
+                totalpay=totalpay-20;
+            }
+            else if (rentDay>=2 && rentDay<4) {
+                totalpay=totalpay-10;
+            }
+            if (typeCustomers==="Diamond"){
+                totalpay=totalpay-15;
+            }
+            if (typeCustomers==="Platium"){
+                totalpay=totalpay-10;
+            } 
+            if (typeCustomers==="Gold"){
+                totalpay=totalpay-5;
+            }
+            else if (typeCustomers==="Silver"){
+                totalpay=totalpay-2;
+            }
+            else {
+            }
+            alert("Tổng số tiền khách hàng cần thanh toán:" + totalpay);
+            break;
+    }
+</script>
+
+</body>
+</html>

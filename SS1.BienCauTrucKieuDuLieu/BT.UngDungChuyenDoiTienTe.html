@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>Nhập tiền muốn đổi</label>
+    <input type="number" id="nhaptien">
+    <label>Tiền muốn đổi</label>
+    <select id="tiendoi">
+        <option value="VND">Việt Nam Đồng</option>
+        <option value="USD">Đô La Mỹ</option>
+    </select>
+    <label>Tiền đổi thành:</label>
+    <select id="tiennhan">
+        <option value="VND">Việt Nam Đồng</option>
+        <option value="USD">Đô La Mỹ</option>
+    </select>
+    <input type="button" onclick="doitien()" value="Đổi Tiền">
+    <p id="result"></p>
+</form>
+<script>
+    function doitien() {
+        let tiennhap=parseFloat(document.getElementById("nhaptien").value);
+        let tiendoi=document.getElementById("tiendoi").value;
+        console.log(tiendoi);
+        let  tiennhan=document.getElementById("tiennhan").value;
+        let result=0;
+        console.log(tiennhan);
+    if (tiendoi==="VND" && tiennhan==="USD" ){
+        result=tiennhap*0.000043;
+    }
+    else if (tiendoi==="USD" && tiennhan==="VND"){
+        result=tiennhap*23300;
+    }
+    else {
+        result=tiennhap*1;
+    }
+       alert(result)
+    }
+
+</script>
+
+</body>
+</html>

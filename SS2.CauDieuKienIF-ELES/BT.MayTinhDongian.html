@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table border="4">
+        <tr>
+            <td>
+                <input type="text" id="result" size="20"><br>
+            </td>
+        </tr>
+        <tr>
+           <td>
+    <input type="button"  id="so1" value="1" onclick="getValue(this.value)">
+    <input type="button" id="so2" value="2" onclick="getValue(this.value)">
+    <input type="button" id="so3" value="3" onclick="getValue(this.value)">
+    <input type="button" id="dau+" value="+" onclick="getValue(this.value)">
+               <br>
+    <input type="button" id="so4" value="4" onclick="getValue(this.value)">
+    <input type="button" id="so5" value="5" onclick="getValue(this.value)">
+    <input type="button" id="so6" value="6" onclick="getValue(this.value)">
+    <input type="button" id="dau-" value="-" onclick="getValue(this.value)"><br>
+    <input type="button" id="so7" value="7" onclick="getValue(this.value)">
+    <input type="button" id="so8" value="8" onclick="getValue(this.value)">
+    <input type="button" id="so9" value="9" onclick="getValue(this.value)">
+    <input type="button" id="dau*" value="*" onclick="getValue(this.value)"><br>
+    <input type="button" id="dauC" value="C" onclick="getValue(this.value)">
+    <input type="button" id="so0" value="0" onclick="getValue(this.value)">
+    <input type="button" id="dau=" value="=" onclick="calculator()">
+    <input type="button" id="dau/" value="/" onclick="getValue(this.value)">
+               <br>
+           </td>
+           </tr>
+    </table>
+</form>
+<script>
+    let result="";
+    function getValue(e) {
+        result+=e;
+        document.getElementById("result").value=result;
+    }
+    function calculator() {
+        document.getElementById("result").value=eval(result);
+    }
+
+</script>
+
+
+</body>
+</html>

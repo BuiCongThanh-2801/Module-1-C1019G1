@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let checkValidate=false;
+    let name = prompt("Nhập tên :");
+    let nameao="";
+        name=name.trim().toLocaleLowerCase();
+        for (let i=0;i<name.length;i++){
+            if (name.charAt(i)===" " && name.charAt(i+1)===" " ){
+                continue;
+            }
+            if (i===0 || name.charAt(i-1)===" "){
+                nameao+=name.charAt(i).toLocaleUpperCase();
+                continue;
+            }
+            nameao+=name.charAt(i);
+        }
+        name=nameao;
+
+
+    let IdCard;
+    do {
+        IdCard=prompt(" Nhập số chưng minh nhân dân: ");
+        if (isNaN(IdCard)){
+            alert("Yêu cầu nhập số chứng minh nhân dân hợp lệ !!!");
+            continue;
+        }
+        IdCard=Number.parseFloat(IdCard);
+        if (!Number.isInteger(IdCard)){
+            alert("Yêu cầu nhập số chứng minh nhân dân hợp lệ !!");
+            continue;
+        }
+        if (IdCard<999999999 && IdCard>100000000){
+            checkValidate=true;
+        }
+    }
+    while (!checkValidate);
+
+    let birthday;
+    do {
+        birthday= prompt(" Nhập Tháng trước Ngày sau(dd/MM/YYYY): ");
+        if (birthday.charAt(2)!=="/" || birthday.charAt(5)!=="/"){
+            alert("Ngày sinh không hợp lệ. Vui lòng nhập lại ngày sinh !!!");
+            continue;
+        }
+        let day=birthday.substring(0,2);
+        let month=birthday.substring(3,5);
+        let year=birthday.substring(6,10);
+        day=Number.parseFloat(day);
+        month=Number.parseFloat(month);
+        year=Number.parseFloat(year);
+        if (Number.isInteger(day) && Number.isInteger(month) && Number.isInteger(year)){
+            if (day>0 && day<32 && month>0 && month<13 && year >1960 && year<2019) {
+                checkValidate=true;
+            }
+        }
+        }
+    while (!checkValidate);
+
+    let email;
+    do {
+        checkValidate=false;
+        email=prompt(" Nhập Email: ");
+        let countDoc=0;
+        let countAt=0;
+        for (let i=0;i<email.length;i++){
+            if (email.charAt(i)==="@"){
+                countAt++;
+            }
+            if (email.charAt(i)==="."){
+                countDoc++;
+            }
+        }
+        if (countDoc>1 && countDoc<3 || countAt===1){
+            checkValidate=true;
+        }
+        else {
+            alert("Email không hợp lệ. Vui lòng nhập lại email !!!");
+        }
+    }
+    while (!checkValidate);
+
+    let address = prompt(" Nhập địa chỉ: ");
+    let diachi="";
+        address=address.trim().toLocaleLowerCase();
+        for (let j=0;j<address.length;j++){
+            if (address.charAt(j)===" " && address.charAt(j+1)===" "){
+                continue;
+            }
+            if (j===0 || address.charAt(j-1)=== " "){
+                diachi+=address.charAt(j).toLocaleUpperCase();
+                continue;
+            }
+            diachi=address.charAt(j);
+        }
+        address=diachi;
+    let typeCustomers= prompt(" Nhập kiểu khách hàng: ");
+    let kieuKhach="";
+        typeCustomers=typeCustomers.trim().toLocaleLowerCase();
+        for (let k=0;k<typeCustomers.length;k++){
+            if (typeCustomers.charAt(k)===" " && typeCustomers.charAt(k+1)=== " "){
+                continue;
+            }
+            if (k===0 || typeCustomers.charAt(k-1)===" "){
+                kieuKhach+=typeCustomers.charAt(k).toLocaleUpperCase();
+                continue;
+            }
+            kieuKhach=typeCustomers.charAt(k);
+        }
+        typeCustomers=kieuKhach;
+    let disCount;
+    disCount=prompt("Nhập giảm giá");
+    do {
+        if (isNaN(disCount)){
+            alert("Giảm giá không hợp lệ. Vui lòng nhập lại giảm giá !!!");
+            continue;
+        }
+        disCount=Number.parseFloat(disCount);
+        if (!Number.isInteger(disCount)){
+            alert("Giảm giá không hợp lệ. Vui lòng nhập lại giảm giá !!!");
+            continue;
+        }
+        else {
+
+        }
+    }
+    while (!checkValidate);
+
+    let rentDay;
+    do {
+        rentDay=prompt(" Nhập số ngày thuê: ");
+        if (!isNaN(rentDay)){
+            rentDay=Number.isInteger(rentDay);
+            if (rentDay>0){
+                checkValidate=false;
+            }
+        }
+        else {alert("Ngày thuê không hợp lệ. Vui lòng nhập lại ngày thuê !!!");
+            checkValidate=true;
+        }
+    }
+    while (!checkValidate);
+
+    let typeRoom= prompt(" Nhập kiểu phòng");
+    let kieuPhong="";
+        typeRoom=typeRoom.trim().toLocaleLowerCase();
+        for (let t=0;t<typeRoom.length;t++){
+            if (typeRoom.charAt(t)===" " && typeRoom.charAt(t+1)===" "){
+                continue;
+            }
+            if (t===0 || typeCustomers.charAt(t-1)===" "){
+                kieuPhong+=typeRoom.charAt(t).toLocaleUpperCase();
+                continue;
+            }
+            kieuPhong+=typeRoom.charAt(t)
+        }
+        typeRoom=kieuPhong;
+    let typeService = prompt(" Kiểu dịch vụ");
+    let numberOfAccompanying ;
+    do {
+        numberOfAccompanying=prompt(" Nhập số lượng đi kèm");
+        if (!isNaN(numberOfAccompanying)){
+            numberOfAccompanying=Number.isInteger(numberOfAccompanying);
+            if (numberOfAccompanying>0){
+                checkValidate=false;
+            }
+        }
+        else {
+            alert("Yêu cầu nhập lại số lượng khách");
+            checkValidate=true;
+        }
+    }
+    while (!checkValidate);
+
+
+    alert("Thông tin khách hàng " +
+        "\n1. Tên khách hàng:" + name+
+        "\n2. Ngày sinh:" + birthday+
+        "\n3. Số CMND:" +IdCard +
+        "\n4. Email :" + email+
+        "\n5. Địa Chỉ" + address+
+        "\n6. Kiểu khách hàng:" + typeCustomers+
+        "\n7. Giảm giá:" + disCount+
+        "\n8. Số ngày thuê:" + rentDay+
+        "\n9. Kiểu phòng" + typeRoom +
+        "\n10 . Kiểu dịch vụ" + typeService+
+        "\11. Số lượng đi kèm" + numberOfAccompanying );
+
+</script>
+</body>
+</html>

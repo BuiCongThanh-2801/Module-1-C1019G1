@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let vatly= parseFloat(prompt("Nhập điểm lý"));
+    let hoahoc=parseFloat(prompt("Nhập điểm hóa học"));
+    let sinhoc=parseFloat(prompt("Nhập điểm sinh học:"));
+    let tongdiem=sinhoc+vatly+hoahoc;
+    let diemtrungbinh= tongdiem/3;
+    document.write("Tổng điểm là"+tongdiem +"  :Điểm trung bình là: " + diemtrungbinh);
+
+
+    let doC= parseFloat(prompt("Nhập độ C"));
+    let doF= ((doC/5)*9)+32;
+    document.write("Độ F là:" + doF);
+
+    let R= parseFloat(prompt("Nhập R"));
+    let PI=Math.PI;
+    let S= R*R*PI;
+    let chuvi= 2*PI*R;
+    document.write("diện tích hình tròn:" + S);
+    document.write("Chu vi hình tròn:" + chuvi);
+</script>
+
+</body>
+</html>
