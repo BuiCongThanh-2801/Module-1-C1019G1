@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a=[44,22,55,11,64,1,2,8,49,10];
+    let max=a[0];
+    let index=0;
+    let total=0;
+    let trungbinh=0;
+    for (let i=1;i<a.length;i++){
+        if (a[i]>max){
+            max=a[i];
+            index=i;
+        }
+        total+=a[i];
+        trungbinh=total/a.length
+    }
+
+    document.write("Số có giá trị lớn nhất là số: " + max + " ở vị trí " + index +"<br>"
+    +"giá trị trung bình của các số " +trungbinh)
+
+</script>
+
+</body>
+</html>

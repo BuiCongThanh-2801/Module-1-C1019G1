@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=[];
+    dem=0;
+    for (let i=0;i<10;i++){
+        let nhapso=parseInt(prompt("Nhập số phân tử trong mảng ở vị trí " +i));
+        array.push(nhapso);
+    }
+    let list=parseInt(prompt("Nhập số "));
+    for (let t=0; t<array.length;t++){
+        if (list===array[t]){
+            dem++;
+        }
+    }
+    if (dem>0){
+        document.write("Có trong mảng")
+    }
+    else {
+        document.write("không có trong mảng")
+    }
+</script>
+
+</body>
+</html>

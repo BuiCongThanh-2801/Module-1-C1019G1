@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=parseInt(prompt("Nhập số "));
+    let a = 1;
+    let b = 0;
+    let sum;
+    while (num > 0) {
+        sum = a;
+        a = a + b;
+        b = sum;
+        num--;
+    }
+    document.write(sum+"<br>")
+</script>
+
+</body>
+</html>

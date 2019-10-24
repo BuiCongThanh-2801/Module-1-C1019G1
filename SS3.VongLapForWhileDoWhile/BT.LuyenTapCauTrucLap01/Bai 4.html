@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        let a = 1;
+        let b = 0;
+        let sum;
+        while (a > 0) {
+            sum = a;
+            a = a + b;
+            b = sum;
+            if (sum % 5 === 0) {
+                document.write(sum);
+                break;
+            }
+        }
+
+</script>
+
+</body>
+</html>

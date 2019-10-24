@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=[];
+    let arrrayAB=[];
+    for (let i=0;i<5;i++){
+        let mangA=parseInt(prompt("Nhập số vào mảng A ở vị trí số " +i));
+        arrrayAB.push(mangA);
+    }
+
+    for (let j=0;j<5;j++){
+        let mangB=parseInt(prompt("Nhập số vào mảng B ở vị trí số " +j));
+        arrrayAB.push(mangB);
+
+    }
+    for (let t=0; t<20; t++){
+        let mangC=parseInt(prompt("Nhập số vào mảng C ở vị trí số " +t));
+        array.push(mangC);
+    }
+    array.push(arrrayAB);
+    document.write("các số mảng" + array.join("<br>"))
+</script>
+
+</body>
+</html>

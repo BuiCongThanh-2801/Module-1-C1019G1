@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers=[];
+    let Array=[];
+    let arrDelCustomer=["Thành","Đức","Long","An","Quân","Vũ","Duy","Hải","Hoàng Anh","Quảng"];
+    let MainMenu=parseInt(prompt("Khách hàng chọn vào các mục dưới đây" +
+                        "\n1.Add new Customers"+
+                        "\n2.Delete Customers"));
+    switch (MainMenu) {
+        case 1:
+            let soluong=parseInt(prompt("Nhập số lượng Customers muốn thêm vào"));
+            for (let i = 0; i < soluong; i++){
+                let add=prompt("Nhập tên của New Customers" + i);
+                    arrNameCustomers.push(add);
+            }
+            document.write("Tên của khách hàng mới:" +"<br>"+ arrNameCustomers.join("<br>"));
+            document.write("Tên của khách hàng mới theo thứ tự:" +"<br>"+ arrNameCustomers.sort().join("<br>"));
+            break;
+        case 2:
+            let del=parseInt(prompt("Tên các Customers muốn xóa"+
+                "\n1.Thành"+"\n2.Đức"+"\n3.Long"+"\n4.An"+"\n5.Quân"+"\n6.Vũ"+"\n7.Duy"+"\n8.Hải"+"\n9.Hoàng Anh"+"\n10.Quảng"));
+                arrDelCustomer.splice(del-1,1).join("<br>");
+
+                document.write("Danh sách Customers sau khi xóa :"+"<br>"+ arrDelCustomer.join("<br>"));
+            break;
+    }
+</script>
+
+</body>
+</html>

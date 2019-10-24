@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number= parseInt(prompt("Nhập số lượng dãy số fibolacci muốn hiển thị"));
+    let a=1;
+    let b= 0;
+    let sum;
+    while (number>0) {
+        sum = a;
+        a = a + b;
+        b=sum;
+        number--;
+        document.write(sum + "<br>");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num=parseInt(prompt("Nhập số lượng số trong mảng"))  ;
+    let array=[];
+    let dem=0;
+    for (let i=0;i<num;i++){
+        let nhapso=parseInt(prompt("Nhập số ở vị trí số: " + i ));
+        array.push(nhapso)
+    }document.write("Số trong mảng là " + array);
+    for (let j=0;j<array.length;j++){
+        if (array[j]<0){
+            dem++;
+        }
+    }
+    document.write("Số âm trong mảng có" + dem+ "giá trị");
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="text" id="timkiem" placeholder="Nhập từ cần tìm">
+    <input type="button" onclick="TimKiem()" value="Tìm từ">
+    <p id="result"></p>
+</form>
+<script>
+    function TimKiem(){
+        let timkiem=document.getElementById("timkiem").value;
+        let index=0;
+        let tienganh=["Hello","Bye","Goodlucky"];
+        let tiengviet=["Xin chào","Tạm biệt","Chúc may mắn"];
+        for (let i=0;i<tienganh.length;i++){
+            if (timkiem===tienganh[i]){
+                index=i;
+                alert(tiengviet[index])
+            }
+        }
+
+    }
+</script>
+
+</body>
+</html>
