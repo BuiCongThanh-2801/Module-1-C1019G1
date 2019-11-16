@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap=prompt("Nhập tên lớp");
+    let rengule=/^[ACP][0-9]{4}[GHIKLM]{1} $/;
+    function KiemTra(str) {
+        rengule=/^[ACP][0-9]{4}[GHIKLM] $/;
+        if (rengule.test(str)){
+            alert("Mã lớp hợp lệ");
+        }
+        else {
+            alert("Mã lớp không hợp lệ");
+        }
+    }
+    KiemTra(nhap);
+</script>
+
+</body>
+</html>

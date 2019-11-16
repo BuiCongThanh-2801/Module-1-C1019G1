@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>Chuyển đổi từ feet sang met<br>
+        <input type="number" id="txt" placeholder="Nhập feet" onchange="feetToMet(this.value)">
+<!--        <input type="button" onclick="feetToMet(this.value)" value="CHANGE">-->
+    </p>
+    <p>Giá trị đổi thành:<span id="giatri"></span></p>
+
+    <p>Chuyển đổi từ Met sang Feet<br>
+    <input type="number" id="txt2" placeholder="Nhập met" onchange="metToFeet(this.value)">
+<!--    <input type="button" onclick="metToFeet(this.value)" value="CHANGE">-->
+    </p>
+    <p>Giá trị đổi thành:<span id="giatri2"></span></p>
+</form>
+<script>
+    function feetToMet(val) {
+        val=parseFloat(val);
+        document.getElementById("giatri").innerHTML=val*0.305;
+    }
+    function metToFeet(val) {
+        val=parseFloat(val);
+        document.getElementById("giatri2").innerHTML=val*3.279;
+    }
+</script>
+
+</body>
+</html>

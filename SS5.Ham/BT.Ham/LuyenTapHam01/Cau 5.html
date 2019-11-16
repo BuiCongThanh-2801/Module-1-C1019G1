@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nhap=prompt("Nhập tên ");
+    function Tinh(val) {
+        let ngoisao=["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+        let chomsao=["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+        for (let i=0;i<ngoisao.length;i++){
+            if (nhap===ngoisao[i]){
+                alert(chomsao[i]);
+                break;
+            }
+            else {
+                alert("Không tìm thấy tên ngôi sao !!!")
+            }
+        }
+        return val;
+    }
+    Tinh();
+</script>
+
+</body>
+</html>

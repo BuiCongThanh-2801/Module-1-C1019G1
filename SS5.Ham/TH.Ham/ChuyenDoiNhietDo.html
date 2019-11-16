@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <h3>Temparature Conventer</h3>
+    <input id="nhap" type="number" onchange="temparatureConventer(this.value)" oninput="temparatureConventer(this.value)">
+    <p>Celcius:<span id="outputCelcius"></span></p>
+</form>
+<script>
+    function temparatureConventer(valNum) {
+        valNum =parseFloat(valNum);
+        document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+    }
+
+</script>
+
+</body>
+</html>

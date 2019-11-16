@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustomers = [];
+
+    function displayMainMenu() {
+        let chon = parseInt(prompt("Người dùng chọn chức năng" +
+            "\n1.Add New Customers" +
+            "\n2.Display Information Customers" +
+            "\n3.Edit Information Customers" +
+            "\n4.Delete Customers" +
+            "\n5.Exit"));
+        switch (chon) {
+            case 1:
+                AddNewCustomers();
+                break;
+            case 2:
+                displayCustomers();
+                break;
+            case 3:
+                chooseCustomersEdit();
+                break;
+            case 4:
+                chooseDeleteCustomers();
+                break;
+            case 5:
+                deleteCustomers();
+                break;
+        }
+    }
+
+    function AddNewCustomers() {
+        let arrInfo = [];
+        let name = prompt("Nhập tên :");
+        let IdCard = prompt(" Nhập số chưng minh nhân dân: ");
+        let birthday = prompt(" Nhập ngày sinh: ");
+        let email = prompt(" Nhập Email: ");
+        let address = prompt(" Nhập địa chỉ: ");
+        let typeCustomers = prompt(" Nhập kiểu khách hàng: ");
+        let disCount = prompt(" Nhập giảm giá :");
+        let rentDay = prompt(" Nhập số ngày thuê: ");
+        let typeRoom = prompt(" Nhập kiểu phòng");
+        let typeService = prompt(" Kiểu dịch vụ");
+        let numberOfAccompanying = prompt(" Nhập số lượng đi kèm");
+        alert("Thông tin khách hàng " +
+            "\n1. Tên khách hàng:" + name +
+            "\n2. Ngày sinh:" + birthday +
+            "\n3. Số CMND:" + IdCard +
+            "\n4. Email :" + email +
+            "\n5. Địa Chỉ" + address +
+            "\n6. Kiểu khách hàng:" + typeCustomers +
+            "\n7. Giảm giá:" + disCount +
+            "\n8. Số ngày thuê:" + rentDay +
+            "\n9. Kiểu phòng" + typeRoom +
+            "\n10 . Kiểu dịch vụ" + typeService +
+            "\11. Số lượng đi kèm" + numberOfAccompanying);
+
+
+        arrInfo.push(name);
+        arrInfo.push(birthday);
+        arrInfo.push(IdCard);
+        arrInfo.push(email);
+        arrInfo.push(address);
+        arrInfo.push(typeCustomers);
+        arrInfo.push(disCount);
+        arrInfo.push(rentDay);
+        arrInfo.push(typeRoom);
+        arrInfo.push(typeService);
+        arrInfo.push(numberOfAccompanying);
+        arrListCustomers.push(arrInfo);
+        displayMainMenu();
+
+    }
+
+    let selectCustomers = "";
+    let checkDeleteCustomers = false;
+
+    function displayCustomers() {
+        let result = "";
+        for (let i = 0; i < arrListCustomers.length; i++) {
+            result += "\n" + (i + 1) + ". Name:" + arrListCustomers[i][0] + "  IdCard:" + arrListCustomers[i][2];
+        }
+        result += "\n" + (arrListCustomers.length + 1) + ". Back to menu";
+        selectCustomers = parseInt(prompt(result));
+        if (selectCustomers.toString() !== (arrListCustomers.length + 1).toString()) {
+            if (!checkDeleteCustomers) {
+                displayInformationCustomers(Number.parseInt(selectCustomers) - 1)
+            } else {
+                deleteCustomers(Number.parseInt(selectCustomers)-1);
+            }
+        }else {
+            checkDeleteCustomers = false;
+            checkEditCustomers=false;
+            displayMainMenu()
+        }
+    }
+
+    let checkEditCustomers = false;
+
+    function displayInformationCustomers(index) {
+        if (checkEditCustomers) {
+            let chooseInfoEdit = prompt(
+                "1. Tên khách hàng:" + arrListCustomers[index][0] +
+                "\n2. Ngày sinh:" + arrListCustomers[index][1] +
+                "\n3. Số CMND:" + arrListCustomers[index][2] +
+                "\n4. Email :" + arrListCustomers[index][3] +
+                "\n5. Địa Chỉ" + arrListCustomers[index][4] +
+                "\n6. Kiểu khách hàng:" + arrListCustomers[index][5] +
+                "\n7. Giảm giá:" + arrListCustomers[index][6] +
+                "\n8. Số ngày thuê:" + arrListCustomers[index][7] +
+                "\n9. Kiểu phòng" + arrListCustomers[index][8] +
+                "\n10 . Kiểu dịch vụ" + arrListCustomers[index][9] +
+                "\n11. Số lượng đi kèm" + arrListCustomers[index][10] +
+                "\n12. Back"
+            );
+            if (chooseInfoEdit.toString() !== "12") {
+                editInformationCustomers(Number.parseInt(chooseInfoEdit) - 1,index);
+            } else {
+                displayCustomers();
+            }
+        } else {
+            alert("Information of customers" +
+                "\n1. Name" + arrListCustomers[index][0] +
+                "\n2. ID Card" + arrListCustomers[index][1] +
+                "\n3. Birthday Customers" + arrListCustomers[index][2] +
+                "\n4. Email Customers" + arrListCustomers[index][3] +
+                "\5. Address Customers" + arrListCustomers[index][4] +
+                "\n6. Type Customers" + arrListCustomers[index][5] +
+                "\n7. Discount" + arrListCustomers[index][6] +
+                "\n8. Number Of Accompaning" + arrListCustomers[index][7] +
+                "\n9. Type Room" + arrListCustomers[index][8] +
+                "\n10. Rent day" + arrListCustomers[index][9] +
+                "\n11. Type Of Serivice" + arrListCustomers[index][10]
+            );
+            displayMainMenu();
+        }
+    }
+
+    function chooseCustomersEdit() {
+        checkEditCustomers = true;
+        displayCustomers();
+    }
+
+    function editInformationCustomers(index,numberOfObject) {
+        let editInfo = prompt("Điền thông tin muốn thay đổi: ");
+        switch (index) {
+            case 0:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 1:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 2:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 3:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 4:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 5:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 6:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 7:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 8:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 9:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            case 10:
+                arrListCustomers[index][numberOfObject] = editInfo;
+                break;
+            default:
+                alert("False");
+                return;
+        }
+        checkEditCustomers = false;
+        displayMainMenu();
+    }
+
+    function chooseDeleteCustomers() {
+        checkDeleteCustomers = true;
+        displayCustomers();
+    }
+
+    function deleteCustomers(index) {
+        let chooseConfirm = prompt(
+            "Bạn có chắc sẽ xóa thông tin này không: Tên: " + arrListCustomers[index][0] +
+            ";ID Card: " + arrListCustomers[index][1] + "\n1.Yes\n2.No");
+        if (chooseConfirm === "1") {
+            arrListCustomers.splice(index, 1);
+            alert("Đã xóa rồi nhé !!!");
+        }
+        checkDeleteCustomers = false;
+        displayMainMenu();
+    }
+
+    displayMainMenu();
+</script>
+
+</body>
+</html>

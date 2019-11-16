@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let renggule=/^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+    function validateEmail(str) {
+        renggule=/^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+       if (renggule.test(str)){
+           alert("Email hợp lệ")
+       }
+       else {
+           alert("Email không hợp lệ");
+           return validateEmail;
+       }
+    }
+    let a=prompt("Mời nhập Email");
+    validateEmail(a);
+</script>
+
+</body>
+</html>

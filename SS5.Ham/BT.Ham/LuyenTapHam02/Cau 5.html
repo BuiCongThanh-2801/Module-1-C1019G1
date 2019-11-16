@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=[];
+    for (let i=0;i<3;i++){
+        let a=parseInt(prompt("Nhập số nguyên thứ" + i));
+        array.push(a)
+    }
+    function TinhToan() {
+        let min=array[0];
+        for (let j=1;j<array.length;j++){
+            if (array[j]<min){
+                min=array[j]
+            }
+        }
+        document.write(min)
+    }
+    TinhToan();
+</script>
+
+</body>
+</html>

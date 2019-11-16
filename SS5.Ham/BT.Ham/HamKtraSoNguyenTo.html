@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function SNT(val) {
+    let num=parseInt(prompt("Nhập số "));
+    let count=0;
+    let demuoc=0;
+    let SNT=2;
+    while (count<num){
+        for (let i=1;i<SNT;i++){
+            if (SNT%i===0){
+            demuoc++;
+            }
+            if (demuoc===1){
+                document.write(SNT);
+                count++;
+            }
+            SNT++
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

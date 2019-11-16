@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="number" id="txt">
+    <input type="button" onclick="ChuVi()" value="Tính Chu Vi">
+    <input type="button" onclick="DienTich()" value="Tính Diện Tích">
+</form>
+<script>
+    function ChuVi() {
+        let a=document.getElementById("txt").value;
+        document.write("Chu vi là" + 2*Math.PI*a);
+
+    }
+    function DienTich() {
+        let a=document.getElementById("txt").value;
+        document.write("Diện tích là:" + Math.PI*a*a);
+
+    }
+
+</script>
+
+</body>
+</html>

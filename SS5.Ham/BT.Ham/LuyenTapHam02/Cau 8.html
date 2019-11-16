@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array=[];
+    let a= parseInt(prompt("Bạn muốn nhập bao nhiêu số ?"));
+    function Doi() {
+        for (let i = 0; i < a; i++) {
+            let nhap = parseInt(prompt("Nhập vào số ở vị trí số :" + i));
+            array.push(nhap);
+        }
+        document.write(array.reverse())
+    }
+    Doi();
+
+</script>
+
+</body>
+</html>
